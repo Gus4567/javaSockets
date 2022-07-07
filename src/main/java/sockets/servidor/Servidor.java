@@ -22,8 +22,18 @@ public class Servidor{
 
             while(true){
                 socket = server.accept();
+                System.out.println("Client connect");
                 in = new DataInputStream(socket.getInputStream());
                 out = new DataOutputStream(socket.getOutputStream());
+
+                String message = in.readUTF();
+                System.out.println(message);
+
+                out.writeUTF("Output");
+
+                socket.close();
+
+                System.out.println("Client disconnect");
 
             }
 
