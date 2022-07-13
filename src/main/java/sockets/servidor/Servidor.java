@@ -1,5 +1,7 @@
 package sockets.servidor;
 
+import sockets.cypher.Cypher;
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -8,7 +10,10 @@ import java.net.Socket;
 
 public class Servidor{
 
+
+    Cypher cypher = new Cypher();
     public static void main(String[] args) {
+        //clave de encriptacion
 
         ServerSocket server = null;
         Socket socket = null;
@@ -23,6 +28,7 @@ public class Servidor{
             while(true){
                 socket = server.accept();
                 System.out.println("Client connect");
+
                 in = new DataInputStream(socket.getInputStream());
                 out = new DataOutputStream(socket.getOutputStream());
 

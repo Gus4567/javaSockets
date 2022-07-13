@@ -1,10 +1,15 @@
 package sockets.cliente;
 
 
+import javax.crypto.Cipher;
+import javax.crypto.spec.SecretKeySpec;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
+import java.security.MessageDigest;
+import java.util.Arrays;
+import java.util.Base64;
 
 public class Cliente{
 
